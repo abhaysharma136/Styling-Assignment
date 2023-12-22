@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-w4f5Z6n1avhm4aYTgYTl1lN27GzQCFrlKZNbq22M46XG7r3upJ5MQLAP0eb98ji4J6Jvoq4Gqq3ZgqHBKckBBg=="
+        crossorigin="anonymous" />
+
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1020px;
+            height: 620px;
+            margin: 20px auto;
+
+        }
+
+        .lg-card {
+            width: 500px;
+            height: 600px;
+            background-color: aliceblue;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .sm-card-container {
+            display: flex;
+            flex-direction: row;
+            width: 50%;
+            height: 600px;
+            flex-wrap: wrap;
+            gap: 5px;
+            box-sizing: border-box;
+        }
+
+        .sm-card {
+            width: 250px;
+            height: 300px;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .sm-card img.profile-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .large-card {
+            flex: 2;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+        .sm-card:hover {
+            transform: scale(1.05);
+        }
+
+        .large-card:hover {
+            transform: scale(1.05);
+        }
+
+        .lg-card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 20px;
+            height: 100%;
+        }
+
+        .card-content-large {
+            padding: 20px;
+            height: calc(45%);
+            background-color: blueviolet;
+            color: #fff;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+        }
+
+        .card-image-lg {
+            width: 100%;
+            height: 50%;
+            border-radius: 8px 8px 0 0;
+            object-fit: cover;
+        }
+
+        .card-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px 8px 0 0;
+            object-fit: cover;
+        }
+
+
+        .card-sup-text-large {
+            font-size: 8px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Limit to two lines */
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            white-space: normal;
+            /* Allow multiline */
+        }
+
+        .card-title-large {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Limit to two lines */
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            white-space: normal;
+            /* Allow multiline */
+        }
+
+        .card-title-small {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Limit to two lines */
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            white-space: normal;
+            /* Allow multiline */
+        }
+
+        .card-subtext {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Limit to two lines */
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            white-space: normal;
+            /* Allow multiline */
+        }
+
+        .card-subtext-small {
+            font-size: 0.7rem;
+            margin-bottom: 15px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Limit to two lines */
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            white-space: normal;
+            /* Allow multiline */
+        }
+
+        .card-subtext-large {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Limit to two lines */
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            white-space: normal;
+            /* Allow multiline */
+        }
+
+        .card-button-large {
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease-in-out;
+            border-radius: 50px;
+        }
+
+        .card-button-large:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .sm-card-footer {
+            display: flex;
+            justify-content: space-between;
+            font-size: 8px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .sm-card-container {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: 1200px;
+                gap: 5px;
+            }
+
+            .sm-card {
+                width: 100%;
+                height: 600px;
+                transition: transform 0.3s ease-in-out;
+                position: relative;
+            }
+        }
+
+
+        /* @media (max-width: 768px) {
+            .card {
+                flex: 0 0 100%;
+            }
+        } */
+    </style>
+</head>
+
+
+<body>
+    <div class="cards-container">
+        <div class="lg-card">
+            <img class="card-image-lg"
+                src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                alt="Card Image">
+            <div class="card-content-large">
+                <div class="card-sup-text-large">182 RECEPTUR</div>
+                <div class="card-title">Dodaz zyciu odrobine slodkosci</div>
+                <div class="card-subtext">Wyroby cukiernicze to nasza wielka pasja. Codziennie pracujemy nad nowymi
+                    recepturami, aby dostarczać to co najlepsze.</div>
+                <button class="card-button-large">Zobacz </button>
+            </div>
+        </div>
+        <div class="sm-card-container">
+            <div class="sm-card">
+                <img class="card-image"
+                    src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                    alt="Card Image">
+                <div class="card-content">
+                    <div class="card-title-small">Dodaz zyciu odrobine slodkosci</div>
+                    <div class="card-subtext-small">Wyroby cukiernicze to nasza wielka pasja. Codziennie pracujemy nad
+                        nowymi
+                        recepturami, aby dostarczać to co najlepsze.</div>
+                    <div class="sm-card-footer">
+                        <div>
+                            <i class="fas fa-coffee"></i> DESERY
+                        </div>
+                        <div>
+                            <i class="fas fa-lightbulb"></i> LATWE
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sm-card">
+                <img class="card-image"
+                    src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                    alt="Card Image">
+                <div class="card-content">
+                    <div class="card-title-small">Dodaz zyciu odrobine slodkosci</div>
+                    <div class="card-subtext-small">Wyroby cukiernicze to nasza wielka pasja. Codziennie pracujemy nad
+                        nowymi
+                        recepturami, aby dostarczać to co najlepsze.</div>
+                    <div class="sm-card-footer">
+                        <div>
+                            <i class="fas fa-coffee"></i> DESERY
+                        </div>
+                        <div>
+                            <i class="fas fa-lightbulb"></i> LATWE
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sm-card">
+                <img class="card-image"
+                    src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                    alt="Card Image">
+                <div class="card-content">
+                    <div class="card-title-small">Dodaz zyciu odrobine slodkosci</div>
+                    <div class="card-subtext-small">Wyroby cukiernicze to nasza wielka pasja. Codziennie pracujemy nad
+                        nowymi
+                        recepturami, aby dostarczać to co najlepsze.</div>
+                    <div class="sm-card-footer">
+                        <div>
+                            <i class="fas fa-coffee"></i> DESERY
+                        </div>
+                        <div>
+                            <i class="fas fa-lightbulb"></i> LATWE
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sm-card">
+                <img class="card-image"
+                    src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                    alt="Card Image">
+                <div class="card-content">
+                    <div class="card-title-small">Dodaz zyciu odrobine slodkosci</div>
+                    <div class="card-subtext-small">Wyroby cukiernicze to nasza wielka pasja. Codziennie pracujemy nad
+                        nowymi
+                        recepturami, aby dostarczać to co najlepsze.</div>
+                    <div class="sm-card-footer">
+                        <div>
+                            <i class="fas fa-coffee"></i> DESERY
+                        </div>
+                        <div>
+                            <i class="fas fa-lightbulb"></i> LATWE
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

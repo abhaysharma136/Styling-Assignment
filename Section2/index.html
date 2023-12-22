@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: start;
+            width: 100%;
+            max-width: 500px;
+            height: 500px;
+            /* Set a fixed height for all cards */
+            transition: transform 0.3s;
+            background-color: black;
+            color: #adadad;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            background-color: #2b2b37;
+            color: #d3d3e1;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: 300px;
+            object-fit: cover;
+            /* Maintain aspect ratio and cover the container */
+            border-radius: 8px;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cards-container">
+        <div class="card">
+            <img src="https://img.freepik.com/free-vector/happy-freelancer-with-computer-home-young-man-sitting-armchair-using-laptop-chatting-online-smiling-vector-illustration-distance-work-online-learning-freelance_74855-8401.jpg"
+                alt="Shared Image" class="card-image">
+            <h2>Install The Akash Agent</h2>
+            <p>Datacenters and companies with underutilized capacity install the Akash agent on servers they want to add
+                to the network. Once registered with the network, they become available for tenants to deploy</p>
+        </div>
+
+        <div class="card">
+            <img src="https://img.freepik.com/premium-vector/gorilla-black-background-closeup-yellow-lighting-jungle-zoo-strength-screams-leader-king-growl-dangerous-fangs-hunter-monkey-muscular-wild-artistic-concept-vector-illustration_748571-707.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1697932800&semt=ais"
+                alt="Shared Image" class="card-image">
+            <h2>Allocation By Auction</h2>
+            <p>Deployment slots are allocated via an auction process that begins with a user defining the deployment
+                criteria (resources, topology, price) in a declarative file posted to the Akash blockchain, Providers
+                then programmatically bid on the deployment, with the low bid winning and creating a lease between
+                tenant and provider, again written to the chain</p>
+        </div>
+
+        <div class="card">
+            <img src="https://digitalsynopsis.com/wp-content/uploads/2019/08/beautiful-illustrations-design-inspiration-38.png"
+                alt="Shared Image" class="card-image">
+            <h2>Workload Distribution</h2>
+            <p>Workloads are then distributed off chain via Akash's peer-to-peer file sharing protocol, and a secure
+                overlay network established. Once live, the agreed-upon count of Akash tokens is transferred from tenant
+                to provider periodically for as long as the workload is live, as determined by the network</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

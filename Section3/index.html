@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            gap: 45px;
+        }
+
+        .card {
+            width: 100%;
+            margin: 20px 0;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .card .info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card .info h2 {
+            margin: 10px 0 5px;
+            font-size: 1.5em;
+        }
+
+        .card .info p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .card .social-icons {
+            /* position: absolute;
+            bottom: 40px; */
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .card .info h3 {
+            opacity: 0;
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .card:hover .info h3 {
+            opacity: 1;
+        }
+
+        .card:hover .info p {
+            opacity: 0;
+        }
+
+        .card:hover .social-icons {
+            opacity: 1;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        @media (min-width: 769px) {
+            .card {
+                width: 400px;
+            }
+
+
+        }
+
+        @media (max-width:769px) {
+            .card {
+                overflow-x: auto;
+            }
+
+            .card .info h3 {
+                opacity: 1;
+            }
+
+            .card .social-icons {
+                /* position: absolute;
+            bottom: 40px; */
+                opacity: 1;
+                transition: opacity 0.3s ease-in-out;
+                display: flex;
+                justify-content: space-between;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <img src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+            alt="Profile 1">
+        <div class="info">
+            <h2>John Doe</h2>
+            <p>Web Developer</p>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+        </div>
+        <div class="social-icons">
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?size=626&ext=jpg&ga=GA1.1.1222169770.1702944000&semt=ais"
+            alt="Profile 2">
+        <div class="info">
+            <h2>Jane Smith</h2>
+            <p>UX Designer</p>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+        </div>
+        <div class="social-icons">
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+            alt="Profile 3">
+        <div class="info">
+            <h2>Bob Johnson</h2>
+            <p>Software Engineer</p>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+        </div>
+        <div class="social-icons">
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
